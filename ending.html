@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời kết - Sinh nhật Vân Anh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/OP.jpg">
+</head>
+<body class="ending-page">
+    <main class="container">
+        <div class="ending-message">
+            <h2 class="gradient-text bounce-text">Chúc mừng sinh nhật! 🎉</h2>
+            <p class="from-text">Chúc sinh nhật xinh xắn như chính cậu vậy 🐻💕</p>
+            <div class="signature-container">
+                <p class="signature shine-text">Với tất cả yêu thương 💝</p>
+                <p class="date">05.09.2025 ✨</p>
+            </div>
+        </div>
+        <a href="intro.html" class="button-link">Hết mất rùi 🎀</a>
+    </main>
+
+    <script>
+        function createConfetti() {
+            const confetti = document.createElement('span');
+            confetti.className = 'confetti';
+            const colors = ['🎉', '✨', '🎈', '🎊'];
+            confetti.innerHTML = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 5000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('span');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createConfetti, 400);
+        setInterval(createHeart, 600);
+
+        const bounceText = document.querySelector('.bounce-text');
+        bounceText.innerHTML = bounceText.textContent.split('').map(char => 
+            `<span class="bounce-char">${char}</span>`
+        ).join('');
+    </script>
+</body>
+</html>

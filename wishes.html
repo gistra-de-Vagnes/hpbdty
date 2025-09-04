@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời chúc sinh nhật - Vân Anh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="wishes-page">
+    <main class="container">
+        <div class="profile-container">
+            <img src="img/vananh.jpg" alt="Vân Anh" class="profile-image">
+            <h2 class="gradient-text">Vân Anh 🌸</h2>
+        </div>
+
+        <section class="wishes-container">
+    <div class="main-wish">
+        <p>🎂 Chúc mừng sinh nhật Vân Anh! 🎉</p>
+        <p>Hôm nay là ngày thật đặc biệt, vì thế giới này đã có thêm một người tuyệt vời như cậu. 
+        21 tuổi là một cột mốc quan trọng, đánh dấu sự trưởng thành, tự tin và rực rỡ hơn bao giờ hết. 
+        Tớ cảm thấy may mắn vì có thể gửi đến cậu món quà nho nhỏ này 💝.</p>
+
+        <p>Tuổi mới, mong rằng mỗi ngày của Vân Anh sẽ tràn đầy tiếng cười, 
+        hạnh phúc và những trải nghiệm đáng nhớ. 
+        Hãy luôn giữ trong tim sự nhiệt huyết và năng lượng tích cực, 
+        để bất cứ nơi đâu cậu đi qua cũng đều sáng bừng ✨.</p>
+
+        <p>Tớ không giỏi nói lời hoa mỹ, nhưng tất cả những gì viết ở đây 
+        đều đến từ sự chân thành nhất. 
+        Hy vọng Vân Anh sẽ luôn thấy mình được yêu thương, 
+        không chỉ hôm nay mà là mọi ngày trong năm 🌷.</p>
+    </div>
+
+    <div class="wish-list">
+        <h3>💌 Những lời chúc dành riêng cho Vân Anh 💌</h3>
+        <ul>
+            <li>🌸 Luôn rạng rỡ và xinh đẹp, theo cách rất riêng của cậu.</li>
+            <li>⭐ Những ước mơ lớn sẽ dần thành hiện thực.</li>
+            <li>🎉 Thành công, may mắn và niềm vui sẽ luôn song hành.</li>
+            <li>💖 Dù ở đâu, cũng luôn có người trân trọng và yêu thương cậu.</li>
+        </ul>
+    </div>
+</section>
+
+
+            <a href="ending.html" class="button-link">Chỉ còn 1 chút nữa... 🎀</a>
+        </section>
+    </main>
+
+    <script>
+        function createStar() {
+            const star = document.createElement('span');
+            star.className = 'star';
+            star.innerHTML = '✨';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDuration = Math.random() * 2 + 1 + 's';
+            document.body.appendChild(star);
+
+            setTimeout(() => star.remove(), 3000);
+        }
+
+
+        function createFlower() {
+            const flower = document.createElement('span');
+            flower.className = 'flower';
+            flower.innerHTML = '💐';
+            flower.style.left = -50 + 'px';
+            flower.style.top = Math.random() * 100 + 'vh';
+            document.body.appendChild(flower);
+
+            setTimeout(() => flower.remove(), 4000);
+        }
+
+        setInterval(createStar, 300);
+        setInterval(createFlower, 2000);
+    </script>
+</body>
+</html>

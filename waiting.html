@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Một điều đặc biệt đang đến gần… 💫</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/OP.jpg">
+</head>
+<body class="waiting-page">
+    <main class="container">
+        <h1 class="gradient-text">Có một món quà nhỏ đang chờ Vân Anh mở ra, kiên nhẫn xíu nhé 🎁✨</h1>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <span class="label">Ngày</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <span class="label">Giờ</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <span class="label">Phút</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <span class="label">Giây</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const birthday = new Date('2025-09-05T00:00:00').getTime(); 
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = birthday - now;
+
+            if (distance <= 0) {
+                window.location.href = 'intro.html';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        function createHeart() {
+            const heart = document.createElement('span');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(updateCountdown, 1000);
+        setInterval(createHeart, 300);
+        updateCountdown();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật Vân Anh!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="intro-page">
+    <main class="container">
+        <h1 class="gradient-text main-title">Happy Birthday<br>Vân Anh 🎂🎉✨</h1>
+        <div class="intro-message">
+            <p class="message">Một góc nhỏ đặc biệt dành riêng cho sinh nhật của Vân Anh 💖🎈</p>
+            <p class="sub-message">Mong rằng ngày hôm nay sẽ tràn ngập niềm vui và bất ngờ ngọt ngào với Vân Anh 🎁🎂</p>
+        </div>
+        <a href="wishes.html" class="button-link">Nhấn vào đây nhé 💝</a>
+    </main>
+
+    <script>
+        function createBalloon() {
+            const balloon = document.createElement('span');
+            balloon.className = 'balloon';
+            balloon.innerHTML = ['🎈', '🎈', '🎈', '🎈'][Math.floor(Math.random() * 4)];
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDuration = Math.random() * 3 + 4 + 's';
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 7000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('span');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createBalloon, 500);
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>

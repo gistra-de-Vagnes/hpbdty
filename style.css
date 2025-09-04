@@ -1,0 +1,345 @@
+/* Reset và thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', system-ui, sans-serif;
+    background-color: #FFF8E1;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 111, 181, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #FF6FB5, #FFD166);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 111, 181, 0.2);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Button Style */
+.button-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #FF6FB5, #FFD166);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 111, 181, 0.3);
+}
+
+/* Waiting Page */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.countdown-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 100px;
+    box-shadow: 0 4px 12px rgba(255, 111, 181, 0.1);
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FF6FB5;
+}
+
+.countdown-item .label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Intro Page */
+.main-title {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.intro-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+}
+
+/* Wishes Page */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 5px solid #FF6FB5;
+    box-shadow: 0 5px 15px rgba(255, 111, 181, 0.3);
+}
+
+.wishes-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main-wish {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.wish-list {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.wish-list h3 {
+    color: #FF6FB5;
+    margin-bottom: 1rem;
+}
+
+.wish-list ul {
+    list-style: none;
+}
+
+.wish-list li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.wish-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #FFD166;
+}
+
+/* Ending Page */
+.ending-message {
+    padding: 2rem;
+}
+
+.from-text {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: #FF6FB5;
+}
+
+.signature-container {
+    margin-top: 3rem;
+}
+
+.signature {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+}
+
+.date {
+    margin-top: 1rem;
+    color: #FFD166;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes fall-down {
+    0% {
+        transform: translateY(-10vh) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+@keyframes float-in {
+    0% {
+        transform: translateX(-100vw) rotate(-30deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -100%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Animation Elements */
+.balloon {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: float-up linear forwards;
+}
+
+.heart {
+    position: fixed;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: fall-down linear forwards;
+}
+
+.star {
+    position: fixed;
+    font-size: 1.2rem;
+    pointer-events: none;
+    animation: twinkle linear infinite;
+}
+
+.flower {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: float-in linear forwards;
+}
+
+.confetti {
+    position: fixed;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: fall-down linear forwards;
+}
+
+/* Text Effects */
+.bounce-char {
+    display: inline-block;
+    animation: bounce 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--char-index));
+}
+
+.shine-text {
+    background: linear-gradient(90deg, #FFD166, #FF6FB5, #FFD166);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 2rem;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .countdown-container {
+        flex-wrap: wrap;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .main-wish {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .gradient-text {
+        font-size: 1.8rem;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+
+    .button-link {
+        padding: 0.8rem 1.5rem;
+    }
+}
